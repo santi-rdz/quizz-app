@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light, .light *));
+@custom-variant active (&:where(.active, .active *));
+@custom-variant quizActive (&:where(.quizActive, .quizActive *));
+@custom-variant correct (&:where(.correct, .correct *));
+@custom-variant incorrect (&:where(.incorrect, .incorrect *));
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/fonts/Rubik-VariableFont_wght.ttf");
+  font-style: normal;
+}
+
+body {
+  min-height: 100dvh;
+  background-image: url("assets/images/pattern-background-mobile-dark.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body.light {
+  background-image: url("assets/images/pattern-background-mobile-light.svg");
+}
+@media (width >= 768px) {
+  body {
+    background-size: auto;
+  }
+}
+@media (width >= 1024px) {
+  body {
+    background-image: url("assets/images/pattern-background-desktop-dark.svg");
+    background-position: center;
+    background-size: cover;
+  }
+  body.light {
+    background-image: url("assets/images/pattern-background-desktop-light.svg");
+  }
+}
+
+@theme {
+  --font-rubik: "Rubik";
+  --color-grey-500: #626c7f;
+  --color-grey-50: #f4f6fa;
+
+  --color-blue-950: #2d3949;
+  --color-blue-900: #313e51;
+  --color-blue-850: #3b4d66;
+  --color-blue-500: #306aff;
+  --color-blue-300: #abc1e1;
+  --color-blue-100: #edf1f9;
+  --color-blue-50: #ebf0ff;
+
+  --color-green-500: #2fdb87;
+  --color-green-100: #e0fdef;
+  --color-purple-600: #a727f5;
+  --color-purple-100: #f6e7ff;
+
+  --color-orange-400: #ff7e35;
+  --color-orange-50: #fff5ed;
+
+  --color-red-500: #ee5454;
+  --animate-slideLeft: slideToLeft ease-in-out 450ms both;
+
+  @keyframes slideToLeft {
+    0% {
+      transform: translateX(150px);
+      opacity: 0.2;
+      visibility: hidden;
+    }
+    1% {
+      visibility: visible;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.subjects li:nth-child(2) {
+  animation-delay: 100ms;
+}
+.subjects li:nth-child(3) {
+  animation-delay: 200ms;
+}
+.subjects li:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+@utility text-1 {
+  font-size: clamp(5.5rem, 4.2676rem + 5.2582vw, 9rem);
+  line-height: 1;
+}
+@utility text-2 {
+  font-size: clamp(2.5rem, 1.9718rem + 2.2535vw, 4rem);
+  line-height: 1;
+}
+@utility text-3 {
+  font-size: clamp(1.25rem, 0.8979rem + 1.5023vw, 2.25rem);
+  line-height: 1.2;
+}
+@utility text-4 {
+  font-size: clamp(1.125rem, 0.9049rem + 0.939vw, 1.75rem);
+  line-height: 1;
+}
+@utility text-5 {
+  font-size: clamp(0.875rem, 0.6549rem + 0.939vw, 1.5rem);
+  line-height: 1.5;
+}
+@utility text-6 {
+  font-size: clamp(0.875rem, 0.743rem + 0.5634vw, 1.25rem);
+  line-height: 1.5;
+}
+
+@utility my-container {
+  width: min(90%, 70rem);
+  margin: 0 auto;
+}
+
+.answer.correctAnswer label::after,
+.answer.correct label::after,
+.answer.incorrect label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.answer.correct label::after {
+  background-image: url("assets/images/icon-correct.svg");
+}
+.answer.correctAnswer label::after {
+  background-image: url("assets/images/icon-correct.svg");
+}
+
+.answer.incorrect label::after {
+  background-image: url("assets/images/icon-incorrect.svg");
+}
