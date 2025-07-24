@@ -29,6 +29,7 @@ This is a responsive and interactive quiz application that allows users to selec
 - Category selection screen
 - Dynamic question rendering
 - Progress indicator
+- LocalStorage Theme
 - Real-time feedback on answers
 - Final results screen
 - Mobile-first responsive layout
