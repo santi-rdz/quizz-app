@@ -1,4 +1,4 @@
-<img width="3336" height="1280" alt="127 0 0 1_5500_index html_ (1)" src="https://github.com/user-attachments/assets/b92a3b99-e340-4ddd-bff3-c1110d9b2e38" /><img width="916" height="1320" alt="127 0 0 1_5500_index html_" src="https://github.com/user-attachments/assets/fdf0eced-8364-48df-9047-c414980536b8" /># Frontend Quiz App
+# Frontend Quiz App
 
 A solution to [Frontend Quiz App Challenge](https://www.frontendmentor.io/challenges/frontend-quiz-app-BE7xkzXQnU)
 
